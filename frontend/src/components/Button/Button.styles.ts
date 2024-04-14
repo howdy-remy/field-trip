@@ -9,6 +9,8 @@ export const Button = styled.button<{
   border-radius: 4px;
   text-decoration: none;
 
+  font-family: ${({theme}) => theme.fonts.ibmSans};
+  font-size: 14px;
   font-weight: 800;
   
   &:hover {

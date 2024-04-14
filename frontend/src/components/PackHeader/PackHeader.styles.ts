@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const PackHeaderWrapper = styled.div`
   display: grid;
-  grid-template-columns: 1fr 242px;
+  grid-template-columns: 1fr 274px;
   gap: 16px;
   align-items: end;
   grid-column: 1 / span 2;

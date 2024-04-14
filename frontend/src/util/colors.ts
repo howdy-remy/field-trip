@@ -8,6 +8,7 @@ export const colors = {
   blue700: '#1A495D',
   blue900: '#24303F',
 
+  gold100: '#F0EDDE',
   gold500: '#DCAB60',
   gold700: '#8A6938',
 };

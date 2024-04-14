@@ -1,12 +1,13 @@
+
 import { Link, useParams } from "react-router-dom";
 import { Header } from "../components/Header/Header";
 
-export const Pack = () => {
+export const Account = () => {
   const { id } = useParams();
   return (
     <>
     <Header />
-      <div>pack: {id} </div>
+      <div>account</div>
       <Link to="/">home</Link>
     </>
   )

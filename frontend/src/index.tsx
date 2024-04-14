@@ -5,13 +5,18 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import Routes from './Routes';
 
+import { ThemeProvider } from 'styled-components';
+import theme from './util/theme';
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 
 root.render(
   <React.StrictMode>
-    <Routes />
+    <ThemeProvider theme={theme}>
+      <Routes />
+    </ThemeProvider>
   </React.StrictMode>
 );
 

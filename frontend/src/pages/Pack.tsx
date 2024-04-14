@@ -1,13 +1,14 @@
 import { Link, useParams } from "react-router-dom";
-import { Header } from "../components/Header/Header";
+import { Layout } from "../components/Layout";
+import { PackHeader } from "../components/PackHeader";
 
 export const Pack = () => {
   const { id } = useParams();
   return (
-    <>
-    <Header />
+    <Layout>
+      <PackHeader>PageTitle</PackHeader>
       <div>pack: {id} </div>
       <Link to="/">home</Link>
-    </>
-  )
-}
+    </Layout>
+  );
+};

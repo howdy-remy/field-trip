@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.18",
+    "@prisma/client": "^5.12.1",
+    "@supabase/auth-ui-react": "^0.4.7",
+    "@supabase/auth-ui-shared": "^0.1.8",
+    "@supabase/supabase-js": "^2.42.4",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
@@ -63,6 +67,7 @@
     "eslint-plugin-react": "^7.34.1",
     "eslint-plugin-storybook": "^0.8.0",
     "globals": "^15.0.0",
+    "prisma": "^5.12.1",
     "prop-types": "^15.8.1",
     "storybook": "^8.0.8",
     "typescript-eslint": "^7.6.0",

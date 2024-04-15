@@ -9,6 +9,6 @@ type Props = {
 
 export const CategoryHeader = ({ children, canEdit }: Props) => (
   <CategoryHeaderWrapper>
-    {children} {canEdit && <Button variant="secondary">Add Item</Button>}
+    {children} {canEdit && <Button $variant="secondary">Add Item</Button>}
   </CategoryHeaderWrapper>
 );

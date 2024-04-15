@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Button = styled.button<{
-  variant: 'primary' | 'secondary' | 'outline'
+  $variant: 'primary' | 'secondary' | 'outline'
 }>`
   all: unset;
   height: 28px;
@@ -18,8 +18,8 @@ export const Button = styled.button<{
     cursor: pointer;
   };
 
-  ${({theme, variant}) => 
-     variant === 'primary' ?
+  ${({theme, $variant}) => 
+     $variant === 'primary' ?
       css`
         background-color: ${theme.colors.blue700};
         color: ${theme.colors.white};
@@ -27,7 +27,7 @@ export const Button = styled.button<{
           background-color: ${theme.colors.blue500};
         };
       `
-    : variant === 'secondary' ?
+    : $variant === 'secondary' ?
       css`
         background-color: ${theme.colors.blue100};
         color: ${theme.colors.blue700};

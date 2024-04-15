@@ -1,22 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import reportWebVitals from "./reportWebVitals";
+import { SupabaseContextProvider } from "./context/SupabaseContext";
 
-import './index.css';
-import Routes from './Routes';
+import "./index.css";
+import Routes from "./Routes";
 
-import { ThemeProvider } from 'styled-components';
-import theme from './util/theme';
+import { ThemeProvider } from "styled-components";
+import theme from "./util/theme";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
+  document.getElementById("root") as HTMLElement
 );
 
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <Routes />
-    </ThemeProvider>
+    <SupabaseContextProvider>
+      <ThemeProvider theme={theme}>
+        <Routes />
+      </ThemeProvider>
+    </SupabaseContextProvider>
   </React.StrictMode>
 );
 

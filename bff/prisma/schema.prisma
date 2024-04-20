@@ -12,10 +12,38 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
+enum WeightUnit {
+  LB
+  OZ
+  G
+  KG
+}
+
+enum Case {
+  WORN
+  CONSUMABLE
+}
+
 model User {
   id        Int      @id @default(autoincrement())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   email     String   @unique
   name      String
+  items     Item[]
+}
+
+model Item {
+  id          Int        @id @default(autoincrement())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  type        String
+  description String?
+  weight      Float
+  unit        WeightUnit
+  quantity    Int
+  case        Case?
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
 }

@@ -16,7 +16,7 @@ import moreIcon from "./more.png";
 
 type Props = {
   type: string;
-  description: string;
+  description?: string | null;
   weight: number;
   unit: WeightUnit;
   quantity: number;

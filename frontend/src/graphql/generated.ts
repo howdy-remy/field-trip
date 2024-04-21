@@ -16,9 +16,44 @@ export type Scalars = {
   Date: { input: any; output: any; }
 };
 
+export type Item = {
+  __typename?: 'Item';
+  case?: Maybe<Scalars['String']['output']>;
+  description?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ID']['output'];
+  quantity: Scalars['Int']['output'];
+  type: Scalars['String']['output'];
+  unit: Scalars['String']['output'];
+  user: User;
+  weight: Scalars['Float']['output'];
+};
+
+export type Mutation = {
+  __typename?: 'Mutation';
+  createItem: Item;
+};
+
+
+export type MutationCreateItemArgs = {
+  case?: InputMaybe<Scalars['String']['input']>;
+  description?: InputMaybe<Scalars['String']['input']>;
+  quantity: Scalars['Int']['input'];
+  type: Scalars['String']['input'];
+  unit: Scalars['String']['input'];
+  userId: Scalars['Int']['input'];
+  weight: Scalars['Float']['input'];
+};
+
 export type Query = {
   __typename?: 'Query';
+  item: Item;
+  items: Array<Item>;
   users: Array<User>;
+};
+
+
+export type QueryItemArgs = {
+  id: Scalars['Int']['input'];
 };
 
 export type User = {

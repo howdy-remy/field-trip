@@ -3,9 +3,9 @@ import { Case } from '../../types';
 import { Menu } from '@headlessui/react';
 
 type ItemWrapperProps = {
-  canEdit: boolean;
-  canDrag: boolean;
-  itemCase: Case | null
+  $canEdit: boolean;
+  $canDrag: boolean;
+  $itemCase: Case | null
 }
 
 export const ItemWrapper = styled.div<ItemWrapperProps>`
@@ -19,20 +19,20 @@ export const ItemWrapper = styled.div<ItemWrapperProps>`
 
   background-color: ${({theme}) => theme.colors.white};
 
-  ${({canDrag, canEdit, itemCase}) => {
-    if(!canDrag && !canEdit && !itemCase) {
+  ${({$canDrag, $canEdit, $itemCase}) => {
+    if(!$canDrag && !$canEdit && !$itemCase) {
       return css`grid-template-columns: 1fr 90px 48px;`
-    } else if(!canDrag && !itemCase) {
+    } else if(!$canDrag && !$itemCase) {
       return css`grid-template-columns: 1fr 90px 48px 20px;`
-    } else if (!canEdit && !itemCase) {
+    } else if (!$canEdit && !$itemCase) {
       return css`grid-template-columns: 16px 1fr 90px 48px;`
-    } else if(!canDrag && !canEdit) {
+    } else if(!$canDrag && !$canEdit) {
         return css`grid-template-columns: 1fr max-content 90px 48px;`
-    } else if (!canDrag) {
+    } else if (!$canDrag) {
       return css`grid-template-columns: 1fr max-content 90px 48px 20px;`
-    } else if (!canEdit) {
+    } else if (!$canEdit) {
       return css`grid-template-columns: 16px 1fr max-content 90px 48px;`
-    } else if (!itemCase) {
+    } else if (!$itemCase) {
       return css`grid-template-columns: 16px 1fr 90px 48px 20px;`
     }
   }}

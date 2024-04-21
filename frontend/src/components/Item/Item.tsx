@@ -34,11 +34,8 @@ export const Item = ({
   weight,
   unit,
 }: Props) => {
-  const handleMenuOnClick = () => {
-    console.log("click!");
-  };
   return (
-    <ItemWrapper canEdit={canEdit} canDrag={canDrag} itemCase={itemCase}>
+    <ItemWrapper $canEdit={canEdit} $canDrag={canDrag} $itemCase={itemCase}>
       {canDrag && (
         <DragHandleWrapper>
           <img src={dragHandle} alt="draggable handle icon" />
@@ -47,7 +44,7 @@ export const Item = ({
       <div>
         <b>{type}</b> {description}
       </div>
-      {!!itemCase ? <Tag variant="secondary">{itemCase}</Tag> : ""}
+      {!!itemCase ? <Tag $variant="secondary">{itemCase}</Tag> : ""}
       <Value>
         {weight.toFixed(2)} {unit}
       </Value>

@@ -6,7 +6,9 @@ const fonts = {
   ibmMono: `"IBM Plex Mono", monospace`,
 }
 
-export default {
+const theme = {
   colors,
   fonts
 }
+
+export default theme;

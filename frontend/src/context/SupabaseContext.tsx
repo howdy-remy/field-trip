@@ -1,8 +1,9 @@
 import { ReactNode, useContext } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { createContext } from "react";
+
 const supabaseUrl = "https://tmglwtybylbbayxcuwyx.supabase.co";
-const supabaseKey = process.env.SUPABASE_KEY ?? "";
+const supabaseKey = process.env.REACT_APP_SUPABASE_KEY ?? "";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 type SupabaseContextValues = {

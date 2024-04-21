@@ -1,3 +1,4 @@
+import { WeightUnit, Case } from "@prisma/client";
 import { builder } from "../builder";
 import { prisma } from "../prismaClient";
 
@@ -24,7 +25,7 @@ builder.queryField('items', (t) =>
       return prisma.item.findMany({ ...query });
     },
   })
-)
+);
 
 builder.queryField('item', (t) => 
   t.prismaField({
@@ -36,4 +37,33 @@ builder.queryField('item', (t) =>
       return prisma.item.findUniqueOrThrow({ ...query, where: {id: args.id} });
     },
   })
-) 
+);
+
+builder.mutationField('createItem', (t) =>
+  t.prismaField({
+    type: "Item",
+    args: {
+      type: t.arg.string({required: true}),
+      description: t.arg.string(),
+      weight: t.arg.float({required: true}),
+      unit: t.arg.string({required: true, }),
+      quantity: t.arg.int({required: true}),
+      case: t.arg.string(),
+      userId: t.arg.int({required: true})
+    },
+    resolve: (query, root, args, ctx, info) => {
+      const item = {
+        userId: args.userId,
+        type: args.type,
+        description: args.description,
+        weight: args.weight,
+        unit: WeightUnit[args.unit as keyof typeof WeightUnit],
+        quantity: args.quantity,
+        case: args.case?.length ? Case[args.case as keyof typeof Case] : null,
+      }
+      return prisma.item.create({
+        data: item
+      })
+    }
+  })
+);
